@@ -20,7 +20,7 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "request": "^2.88.0",
     "shortid": "^2.2.15"
   },
