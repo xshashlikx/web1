@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+  </head>
+  <style>
+    .sizeguide__illustration {
+      width: 250px;
+      margin: 0 auto;
+      display: block;
+    }
+    .sizeguide__illustration img {
+      width: 100%;
+      height: auto;
+    }
+
+    .sizeguide__inner {
+      position: relative;
+      margin-top: 60px;
+      position: relative;
+      width: 100%;
+      text-align: right;
+    }
+
+    @media screen and (min-width: 900px) {
+      .sizeguide__illustration {
+        margin: 0;
+        display: inline-block;
+        vertical-align: middle;
+        width: 25%;
+      }
+
+      .sizeguide__inner {
+        display: inline-block;
+        margin-top: 0;
+        margin-left: 20px;
+        width: 70%;
+        vertical-align: middle;
+      }
+    }
+
+    .toggle__main-albel {
+      display: none;
+    }
+    @media screen and (min-width: 450px) {
+      .toggle__main-label {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+
+    .sizeguide input[type="checkbox"] {
+      opacity: 0;
+      width: 100%;
+      z-index: 99;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+    }
+
+    .sizeguide input[type="checkbox"]:focus ~ .toggle__controls {
+      outline: 1px solid #19ca2a;
+    }
+
+    .toggle__opt {
+      display: inline-block;
+      vertical-align: middle;
+      user-select: none;
+    }
+
+    .toggle__opt:first-child {
+      text-align: right;
+      left: 0;
+    }
+    .toggle__opt:last-child {
+      right: 0;
+    }
+
+    .toggle__controls {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      width: 50px;
+      height: 20px;
+      margin: 0 10px;
+    }
+
+    .toggle__controls:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 2px;
+      background-color: #464646;
+
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .toggle__controls:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 7px;
+      background-color: #171717;
+
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-130%, -50%);
+      transition: transform 0.3s ease-out;
+    }
+
+    .sizeguide input[type="checkbox"]:checked ~ .toggle__controls:after {
+      transform: translate(30%, -50%);
+    }
+
+    .sizeguide table {
+      margin-top: 10px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .sizeguide th,
+    td {
+      text-align: center;
+      padding: 12px 5px;
+    }
+
+    .sizeguide th {
+      background: #000;
+      color: #fff;
+      font-weight: normal;
+    }
+
+    .sizeguide td {
+      border: 1px solid #d2d2d2;
+    }
+    .sizeguide thead td {
+      border: 0;
+    }
+    .sizeguide td:first-child {
+      border-left: 0;
+    }
+    .sizeguide td:last-child {
+      border-right: 0;
+    }
+
+    .sizeguide tr:nth-child(2n) {
+      background: #f3f3f3;
+    }
+
+    .alt {
+      display: none;
+    }
+
+    .sizeguide input[type="checkbox"]:checked ~ table .alt {
+      display: inline;
+    }
+    .sizeguide input[type="checkbox"]:checked ~ table .default {
+      display: none;
+    }
+
+    .sizeguide__note {
+      max-width: 600px;
+      text-align: left;
+      line-height: 1.7;
+      font-size: 1.03em;
+    }
+
+    /*for pen presentation*/
+    * {
+      font-family: "Lato", "Arial", sans-serif;
+      color: #171717;
+      box-sizing: border-box;
+    }
+    html {
+      min-height: 100%;
+      background: rgb(14, 13, 13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sizeguide {
+      width: 100%;
+      max-width: 1000px;
+      padding: 40px;
+      background: #fff;
+      box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+  <body>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,900"
+      rel="stylesheet"
+    />
+
+    <div class="sizeguide">
+      <div class="sizeguide__inner">
+        <label for="toggle" class="toggle__main-label">Measurements in: </label>
+        <input type="checkbox" checked id="toggle" />
+        <span class="toggle__controls"></span>
+        <label for="toggle" class="toggle__opt">INCHES</label>
+
+        <table>
+          <thead>
+            <tr>
+              <td>&nbsp;</td>
+              <th>Chest</th>
+              <th>Length</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>S</td>
+              <td>
+                <span class="alt">38 inch</span>
+              </td>
+
+              <td>
+                <span class="alt">27.5 inch</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>M</td>
+              <td>
+                <span class="alt">40 inch</span>
+              </td>
+
+              <td>
+                <span class="alt">28 inch</span>
+              </td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>
+                <span class="alt">42 inch</span>
+              </td>
+
+              <td>
+                <span class="alt">28.5 inch</span>
+              </td>
+            </tr>
+            <tr>
+              <td>XL</td>
+              <td>
+                <span class="alt">44 inch</span>
+              </td>
+
+              <td>
+                <span class="alt">29 inch</span>
+              </td>
+            </tr>
+            <tr>
+              <td>XXL</td>
+              <td>
+                <span class="alt">46 inch</span>
+              </td>
+
+              <td>
+                <span class="alt">30 inch</span>
+              </td>
+            </tr>
+            <tr>
+              <td>XXXL</td>
+              <td>
+                <span class="alt">48 inch</span>
+              </td>
+
+              <td>
+                <span class="alt">31 inch</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+       
+      </div>
+    </div>
+  </body>
+</html>

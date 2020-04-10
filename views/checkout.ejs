@@ -1,0 +1,84 @@
+<%- include('./Includes/head.ejs') %>
+
+<body>
+
+    <div class="fh5co-loader"></div>
+    <div id="page">
+        <nav class="fh5co-nav" role="navigation">
+            <div class="container">
+                <div class="top-menu">
+                    <div class="row">
+                        
+                        <div class="col-sm-10 text-right menu-1">
+                            <ul>
+                                <li><a href="/aboutus">About Us</a></li>
+                                <li><a href="/exclusiveproduct">Shop</a></li>
+                                <li><a href="/checkorder">Track Order</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div id="fh5co-intro bt-m">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 col-md-pull-2">
+                        <h2>Order Details</h2>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="c-container">
+                <form action="/order" autocomplete="off" method="POST">
+                    <div class="formItem">
+                        <label for="name">Name</label><br>
+                        <input type="text" name="name" autocomplete="off" required>
+                    </div>
+                    <div class="formItem">
+                        
+                        <label for="name">Size <span> <br>  </span><span><a href="https://bhaukal.store/sizechart" target="_blank">[size chart]</a> <br/></span></label><br>
+                        <select name="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>
+                        </select>
+                        <p> <strong>Recommendation:</strong> This product runs a size smalle.</p>
+                    </div>
+
+                    <div class="formItem">
+                        <label for="phone">Phone No</label><br>
+                        <input autocomplete="off" type="text" name="phone" maxlength="10" required>
+                    </div>
+                    <div class="formItem">
+                        <label for="email">Email</label><br>
+                        <input type="email" name="email" autocomplete="off" required>
+                    </div>
+                    <div class="formItem">
+                        <label for="hostel">Order Number</label><br>
+                        <input type="text" name="hostel" autocomplete="off" required>
+                    </div>
+                    <div class="formItem">
+                        <label for="roomNo">Room No</label><br>
+                        <input type="text" name="roomNo" autocomplete="off" required>
+                    </div>
+                    <input name="channelid" type="hidden" autocomplete="off" value="WAP" id="channelid">
+                    <div class="formItem">
+                        <label for="amount">Total</label><br>
+                        <input type="text" value="250" name="amount" readonly required>
+                    </div>
+                    <div class="button">
+                        <button class="checkout" type="submit">Checkout</button required>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <script src="/js/screensize.js"></script>
+            <%- include('./Includes/bottom.ejs') %>

@@ -1,0 +1,45 @@
+<%- include('./Includes/head.ejs') %>
+
+<body>
+  <div class="fh5co-loader"></div>
+  <div id="page">
+    <nav class="fh5co-nav" role="navigation">
+      <div class="container">
+        <div class="top-menu">
+          <div class="row">
+            <div class="col-sm-2">
+              
+            </div>
+            <div class="col-sm-10 text-right menu-1">
+              <ul>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/exclusiveproduct">Shop</a></li>
+                <li><a href="/checkorder">Track Order</a></li>
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="con">
+      <% if(status==="TXN_SUCCESS"){ %>
+
+      <h1>Your order has been placed successfully!</h1>
+      
+      <% }else{ %>
+
+      <h1>Try again. Order failed</h1>
+      <% } %>
+      <p>[Take a Screenshot of this screen for future queries]</p>
+      <h4>Order Id: <%= orderId %></h4>
+      <h4>Product: <%= productName %></h4>
+      <% if(status==="TXN_SUCCESS"){ %>
+      <h4>Size: <%= size %></h4>
+      <h4>Delivery: In few weeks! Don't worry we will keep you updated.</h4>
+      <% } %>
+    </div>
+
+    <%- include('./Includes/bottom.ejs') %>
+  </div>
+</body>
